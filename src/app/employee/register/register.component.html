@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+      <div class="col-4">  </div>
+      <div class="col-4">
+
+ <br/>
+    <form [formGroup]="registerForm"  >
+        <div class="mb-3">
+            <label for="exampleInputUserName" class="form-label">User Name</label>
+            <input type="username"  formControlName="username"  placeholder="Enter UserName"   class="form-control" id="exampleInputUserName" aria-describedby="usernameHelp">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email"  formControlName="email"  placeholder="Enter Email"   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" formControlName="password" class="form-control"  placeholder="Password" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Role</label>
+          <select class="form-control"  formControlName="roleid" >
+            <option value="">Select Role</option>
+            <option  *ngFor="let role of Roles, let i=index"
+           
+            value={{role.ID}}>{{role.Role1}}</option>
+          </select>
+        </div>
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>        &nbsp; 
+        <button type="submit" (click)="onReset()" class="btn btn-primary">Reset</button>
+      </form>
+    </div>
+    <div class="col-4">  </div>
+    </div>
+    </div>

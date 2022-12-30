@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark  bg-dark ">
+    <label class="navbar-brand" href="#">Employee Management</label>
+  
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngSwitch]="menuType">
+      <ul class="navbar-nav mr-auto" *ngSwitchCase="'Default'">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="RegisterEmployee">Register</a>
+        </li>
+        <li class="nav-item" >
+            <a class="nav-link" routerLink="Login">Login</a>
+          </li>
+          </ul>
+          
+          <ul class="navbar-nav mr-auto" *ngSwitchCase="'Employee'">
+           
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="Employee">Employee</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"(click)="LogOut()">Log Out</a>
+          </li>
+      </ul>
+     
+    </div>
+
+    <div *ngIf="menuType==='Default'" class="nav-search">
+      <input #searchInput type="text" placeholder="Search" >
+      <button (click)="search(searchInput.value)" >Search</button>
+   </div>
+  </nav>
